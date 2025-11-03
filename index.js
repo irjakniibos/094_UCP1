@@ -34,3 +34,12 @@ res.send(buku);
 res.send(err);
 }
 });
+// Endpoint untuk mendapatkan semua data buku
+app.get('/buku', async (req, res) => {
+try {
+const buku = await db.buku.findAll();
+res.send(buku);
+} catch (err) {
+res.send(err);
+}
+});
