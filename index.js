@@ -13,3 +13,7 @@ extended: false
 app.listen(PORT, () => {
 console.log('Server started on port 3000');
 })
+
+// Sinkronisasi model ke database (membuat tabel jika belum ada)
+db.sequelize.sync()
+.then((result) => {
